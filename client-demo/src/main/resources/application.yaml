@@ -1,0 +1,27 @@
+server:
+  port: 8010
+spring:
+  security:
+    user:
+      password: 1234
+    oauth2:
+      client:
+        registration:
+          client-1-oidc:
+            provider: auth-server
+            clientId: client-1
+            clientSecret: secret-1
+            scope: openid
+            authorizationGrantType: authorization_code
+            redirectUri: "http://127.0.0.1:8010/login/oauth2/code/{registrationId}"
+          client-1-authorization-code:
+            provider: auth-server
+            clientId: client-1
+            clientSecret: secret-1
+            scope: message.read, message.write
+            authorizationGrantType: authorization_code
+            redirectUri: "http://127.0.0.1:8010/authorized"
+        provider:
+          auth-server:
+            issuerUri: http://127.0.0.1:9999
+

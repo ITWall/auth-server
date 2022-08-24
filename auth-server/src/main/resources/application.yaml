@@ -1,0 +1,15 @@
+server:
+  port: 9999
+#spring:
+#  security:
+#    user:
+#      password: 1234
+#      roles:
+#        - USER
+
+logging:
+  level:
+    root: INFO
+    org.springframework: TRACE
+  pattern:
+    console: "%clr(%d{${LOG_DATEFORMAT_PATTERN:yyyy-MM-dd HH:mm:ss.SSS}}){faint} %clr(${LOG_LEVEL_PATTERN:-%5p}) %clr(${PID:- }){magenta} %clr(---){faint} %clr([%40.40file{39} : %5.5line{4}]){cyan} %clr(:){faint} %m%n"
